@@ -1,1 +1,15 @@
-# This repository contains all the materials, curriculum, and code for guiding learners through the ReproRehab Intermediate R & MATLAB cohort
+# POD 3 Bootcamp Curriculum 2024-2025
+
+## Week 1
+
+## Week 2
+
+## Week 3
+
+## Week 4
+
+## Week 5
+
+## Week 6
+
+## Week 7 & 8
