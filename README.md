@@ -21,3 +21,11 @@ You now have the makings of a working analytical pipeline that fits your data an
 
 ## [Week 7 & 8](https://github.com/rinivarg/ReproRehab2024-Pod3/tree/main/Materials/Week%207%20%26%208): Personalized Lessons!!
 We have now covered the basics on all things R that are necessary for reproducible research in rehabilitation science. Now it is your turn to tell us what you would like to learn next! Don’t be afraid to think big or aim for a deep dive into one specific area! Even if it is something that we are unfamiliar with, will make sure to connect you with someone in the ReproRehab cohort that can help!
+
+## Bonus Content: Intro to Git & GitHub
+Three things:
+1) [Git for Humans](https://speakerdeck.com/alicebartlett/git-for-humans)! by Alice Bartlett. This is my absolute favorite slide deck by Alice Bartlett - an introduction to Git that is meant to give you an intuitive understanding of what Git does and Git-related lingo. Knowing the logical structure and function of Git will help you identify potential uses in your research work.
+
+2) [Installing Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git): If #1 made you curious and you want to explore more, the website linked will take you through installation.
+
+3) GitHub: GitHub is the user-friendly platform that uses the Git software to do all the things you can do with Git but in a less overwhelming way! (think R studio for R... similar concept). GitHub can be used as a desktop application or directly off the website. To get started, [sign up for an account](https://github.com/signup?ref_cta=Sign+up&ref_loc=header+logged+out&ref_page=%2F&source=header-home) 
