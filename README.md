@@ -4,7 +4,7 @@
 This lesson is focused on orienting learners to [R](https://cran.r-project.org) and [RStudio](https://posit.co/downloads/). We will go over how to use the many default libraries in R and how to install popular packages for us all within RStudio Learners have different goals and sometimes it is difficult to link how R can help a learner achieve that goal. To this end, we will connect learners with all the available [“Cheatsheets”](https://posit.co/resources/cheatsheets/) that can provide an overview of most of R’s functionality, from data manipulation to data visualization to deep learning.
 
 
-## Week 2: Importing Data into R
+## [Week 2]((https://github.com/rinivarg/ReproRehab2024-Pod3/tree/main/Materials/Week%202): Importing Data into R
 The first step to using R for research is to import one’s data in R’s memory. There are good base functions to import basic file types such as .csv files, but many times the format and file type of the data we wish to import can vary in a way base functions in R do not support. We will go over how to import data of different files types, including: SPSS files, SAS files, Excel spreadsheets, and even using library APIs to import data from REDCap databases and Google sheets. 
 
 ## Week 3: Data Cleaning and Manipulation
