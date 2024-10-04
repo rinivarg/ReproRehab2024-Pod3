@@ -1,5 +1,5 @@
-<img src="ReproRehab-05.png" align = "right" width = "350"><br>
-# POD 3 Bootcamp Curriculum 2024-2025
+<img src="ReproRehab-05.png" align = "right" width = "250"><br>
+# POD 3 Curriculum 2024-25
 
 ## [Week 1](https://github.com/rinivarg/ReproRehab2024-Pod3/tree/main/Materials/Week%201): Tutorial on R/Rstudio and “Cheatsheets”
 This lesson is focused on orienting learners to [R](https://cran.r-project.org) and [RStudio](https://posit.co/downloads/). We will go over how to use the many default libraries in R and how to install popular packages for us all within RStudio Learners have different goals and sometimes it is difficult to link how R can help a learner achieve that goal. To this end, we will connect learners with all the available [“Cheatsheets”](https://posit.co/resources/cheatsheets/) that can provide an overview of most of R’s functionality, from data manipulation to data visualization to deep learning.
