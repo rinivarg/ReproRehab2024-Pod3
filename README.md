@@ -1,4 +1,4 @@
-<img src="ReproRehab-05.png" align = "right" width = "250"><br>
+<img src="ReproRehab-05.png" align = "right" width = "300"><br>
 # POD 3 Curriculum 2024-25
 
 ## [Week 1](https://github.com/rinivarg/ReproRehab2024-Pod3/tree/main/Materials/Week%201): Tutorial on R/Rstudio and “Cheatsheets”
