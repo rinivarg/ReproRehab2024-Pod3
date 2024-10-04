@@ -1,5 +1,4 @@
 <img src="ReproRehab-05.png" align = "right" width = "350"><br>
-
 # POD 3 Bootcamp Curriculum 2024-2025
 
 ## [Week 1](https://github.com/rinivarg/ReproRehab2024-Pod3/tree/main/Materials/Week%201): Tutorial on R/Rstudio and “Cheatsheets”
