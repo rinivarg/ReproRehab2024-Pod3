@@ -1,4 +1,10 @@
 .ipynb_checkpoints
 */.ipynb_checkpoints/*
+
+# R history
 .Rhistory
-*/.Rhistory/*
+
+
+# Environments
+.env
+
