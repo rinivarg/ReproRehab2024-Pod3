@@ -1,13 +1,16 @@
 <img src="ReproRehab-05.png" align = "right" width = "300"><br>
 # ReproRehab POD-3 (2024-25)
 *TAs: Andrew Hooyman and Rini Varghese*<br>
+Learn more about ReproRehab here: https://www.reprorehab.usc.edu
 
 # Overview  
-Welcome Pod 3! We have created a GitHub repository as a centralized location to store and share all the materials/code/resources shared during the bootcamp. 
+Welcome Pod 3! We have created a GitHub repository as a centralized location to store and share all the materials/code/resources discussed during the bootcamp. 
 Each week, we will share with you a **"codebook"** that contains the code and description for what we covered in class. This codebook will be shared in 3 formats to ensure it is accessible to everyone:
-1) ***.IPYNB format***: this is a Jupyter Notebook. It contains the most comprehensive format with commented code and markdown descriptions of what each line does. It also is executable! (more on this later)
-2) ***.PDF format***: this plain old PDF is just as comprehensive but not executable format, for your reference.
-3) ***.R format***: this is R code. It is the least comprehensive codebook with only a commented version of the code, but essentially will run on your R studio interface and do all the exact same things.
+1) ***.IPYNB format***: a.k.a. Jupyter Notebook. It will contain the most comprehensive format with commented code and markdown descriptions of what each line does. It also is executable! (more on this later)
+2) ***.PDF format***: a.k.a plain old PDF. It will be just as comprehensive but not executable. 
+3) ***.R format***: this is R code. It will be the least comprehensive codebook with only a commented version of the code, but essentially will run on your R studio interface and do all the exact same things.
+
+Below is the curriculum which shows the week-wise breakdown of the topics we will cover. Everything on here is subject to change as the needs of the pod evolve. Looking forward to 8 weeks of learning and teamwork!
 
 # Curriculum
 <details>
