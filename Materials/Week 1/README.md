@@ -7,9 +7,9 @@ Each week, we will share with you a **"codebook"** that contains the code and de
 
 **Useful Resources** (also embedded in the notebooks):<br>
 
-* 	Downloading and Installing R & R studio
+* 	Downloading and Installing R & R studio:<br>
 	https://posit.co/download/rstudio-desktop/ <br>
 	
-* 	The here package:
-	http://jenrichmond.rbind.io/post/how-to-use-the-here-package/
+* 	The here package:<br>
+	http://jenrichmond.rbind.io/post/how-to-use-the-here-package/<br>
 	http://jenrichmond.rbind.io/post/where-is-here/
