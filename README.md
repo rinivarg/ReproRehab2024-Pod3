@@ -27,3 +27,9 @@ We have now covered the basics on all things R that are necessary for reproducib
 ## [Bonus Content](https://github.com/rinivarg/ReproRehab2024-Pod3/tree/main/Materials/Bonus): Intro to Git & GitHub
 You've probably heard by now about GitHub for sharing your code and data, but it's much more than that! In fact, Git (the software that the GitHub platform uses) is first and foremost a version-control tool. Through that very function, it allows you to travel in time on some version of your own code *and* collaborate with others on the same code without needing to have a million versions (e.g., code_FINAL_RV, code_FINAL_RV_AH, code_FINALFINAL_AH_RV_RV2024... lol, you get the gist). <br> To learn more, visit the [content folder](https://github.com/rinivarg/ReproRehab2024-Pod3/tree/main/Materials/Bonus).
 
+## Notes for each week
+Each week, we will share with you a **"codebook"** that contains the code and description for what we covered in class. This codebook will be shared in 3 formats to ensure it is accessible to everyone:
+1) .IPYNB format: this is a Jupyter Notebook. It contains the most comprehensive format with commented code and markdown descriptions of what each line does. It also is executable! (more on this later)
+2) .PDF format: this plain old PDF is just as comprehensive but not executable format, for your reference.
+3) .R format: this is R code. It is the least comprehensive codebook with only a commented version of the code, but essentially will run on your R studio interface and do all the exact same things.
+
