@@ -1,1 +1,1 @@
-Installing R & R studio and orientation
+Below are a 
