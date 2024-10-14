@@ -12,7 +12,7 @@ dir(here("Raw Data"))
 
 #Let's read in one file to see how ugly the data are
 files.test=list.files(here("Raw Data","Sub1"))
-temp=read_excel(here("Raw Data","Sub1",files.test[1]))
+temp0=read_excel(here("Raw Data","Sub1",files.test[1]))
 #very ugly need to modify so we only import a certain range
 #Let's just do the first 5 rows where the data is in long format
 temp=read_excel(here("Raw Data","Sub1",files.test[1]),range = cell_cols("J:O"))
