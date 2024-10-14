@@ -1,11 +1,10 @@
+# Clear workspace
 rm(list=ls())
 
-library(here)
-library(purrr)
-library(readxl)
-library(Hmisc)
-library(chron)
-library(ggplot2)
+# Load required libraries
+ReqdLibs = c("here","purrr","readxl","Hmisc","chron","ggplot2")
+
+lapply(ReqdLibs, library, character.only = TRUE)
 
 #Check to see how many directories are in the Raw Data folder
 #Should populate 13 sub folders.
@@ -48,6 +47,7 @@ for(i in 1:length(dir.list)){
     }else{
       temp$trial=paste("trial",as.numeric(substr(files.import[j],nchar(files.import[j])-5,nchar(files.import[j])-5)))
     }
+    # this final step is where the 'stacking' happens
     data.all=rbind(data.all,temp)
     
   }
