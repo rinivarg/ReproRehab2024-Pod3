@@ -8,7 +8,7 @@ Welcome Pod 3! We have created a GitHub repository as a centralized location to 
 Each week, we will share with you a **"codebook"** that contains the code and description for what we covered in class. This codebook will be shared in 3 formats to ensure it is accessible to everyone:
 1) ***.IPYNB format***: in Jupyter Notebook format. This will contain the most comprehensive format with commented code and markdown descriptions of what each line does. It also is executable! (more on this later)
 2) ***.PDF format***: in plain old PDF format. This will be just as comprehensive but not executable. 
-3) ***.R format***: in native R format. This will be the least comprehensive codebook with only a commented version of the code, but essentially will run on your R studio interface and do all the exact same things.
+3) ***.R format***: in native R format. This will only have a commented version of the code, but essentially will run on your R studio interface and do all the exact same things.
 
 Below is the curriculum which shows the week-wise breakdown of the topics we will cover. Everything on here is subject to change as the needs of the pod evolve. Looking forward to 8 weeks of learning and teamwork!
 
