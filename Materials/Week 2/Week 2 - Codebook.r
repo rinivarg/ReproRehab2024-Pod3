@@ -29,6 +29,7 @@ dir.list
 
 data.all = data.frame(list())
 
+# METHOD 1: For loop
 for(i in 1:length(dir.list)){
   files.import=list.files(here(folder_path,dir.list[i]))
   for(j in 1:length(files.import)){
@@ -58,6 +59,7 @@ for(i in 1:length(dir.list)){
 head(data.all)
 dim(data.all)
 
+# METHOD 2: map_df function in Purrr package
 data.all <- map_df(dir.list, function(dir_name) {
   # List all files in the current directory
   files.import <- list.files(here(folder_path, dir_name))
@@ -87,6 +89,7 @@ data.all <- map_df(dir.list, function(dir_name) {
 head(data.all)
 dim(data.all)
 
+# METHOD 3: map_df & dplyr combined
 data.all <- map_df(dir.list, function(dir_name) {
   # List all files in the current directory
   files.import <- list.files(here(folder_path, dir_name))
