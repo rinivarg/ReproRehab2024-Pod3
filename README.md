@@ -10,6 +10,8 @@ Each week, we will share with you a **"codebook"** that contains the code and de
 2) ***.PDF format***: in plain old PDF format. This will be just as comprehensive but not executable. 
 3) ***.R format***: in native R format. This will only have a commented version of the code, but essentially will run on your R studio interface and do all the exact same things.
 
+To follow along in each class, go to this [folder](https://github.com/rinivarg/ReproRehab2024-Pod3/tree/main/Git%20and%20GitHub) and learn how you can integrate this repository with R.
+
 Below is the curriculum which shows the week-wise breakdown of the topics we will cover. Everything on here is subject to change as the needs of the pod evolve. Looking forward to 8 weeks of learning and teamwork!
 
 # Curriculum

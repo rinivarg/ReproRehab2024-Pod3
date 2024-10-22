@@ -1,7 +1,7 @@
 Below are some resources on how to get started on Git and GItHub to effectively use this repository:
 
 1) [Git for Humans](https://speakerdeck.com/alicebartlett/git-for-humans)! by Alice Bartlett. This is Rini's absolute favorite slide deck meant to give you an intuitive understanding of what Git does and Git-related lingo. This introduction to the logical structure and function of Git will help you identify potential uses in your research work. 
-	* Here's the slide deck Rini presented on [Intro to Git]
+	* Here's the slide deck Rini presented on [Intro to Git](https://github.com/rinivarg/ReproRehab2024-Pod3/blob/main/Git%20and%20GitHub/Intro_to_Git.pdf)
 
 2) [Installing Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git): If #1 made you curious and you want to explore more, the website linked will take you through Git installation. You will need this for #4.
 
