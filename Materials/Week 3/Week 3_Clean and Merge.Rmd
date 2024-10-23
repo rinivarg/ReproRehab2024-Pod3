@@ -164,10 +164,9 @@ ggplot(demo.data.var.long,aes(x=trial,Value,color=Gender))+
   geom_boxplot()+
   facet_wrap(~Variable,scales = "free")
 
-hist(demo$Age)
 
-ggplot(demo.data,aes(x=trial,VO2,color=Sub,group = Sub,size=Age))+
-  geom_point()+
-  geom_line()
+# RV's changes--
+ggplot(demo.data, aes(x = trial, y = VE, col = Gender) + 
+geom_pointrange()
 
 ```
