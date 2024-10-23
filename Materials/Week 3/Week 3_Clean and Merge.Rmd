@@ -166,7 +166,7 @@ ggplot(demo.data.var.long,aes(x=trial,Value,color=Gender))+
 
 
 # RV's changes--
-ggplot(demo.data, aes(x = trial, y = VE, col = Gender) + 
+ggplot(demo.data, aes(x = trial, y = VE, col = RF) + 
 geom_pointrange()
 
 ```
