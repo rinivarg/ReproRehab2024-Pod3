@@ -171,15 +171,17 @@ thm = theme(
           title =element_text(size=14, face='bold'),
           text = element_text(colour = "black",size=18), 
           plot.title = element_text(colour = "black",size = 35, face = "bold", hjust = 0.5),
-          axis.ticks.length = unit(0.3,"cm"),
+          axis.ticks.length = unit(-0.3,"cm"),
           axis.line = element_line(colour = "black",size=1),
           axis.ticks = element_line(colour = "black",size=1),
           axis.text = element_text(colour = "black",size=35),
-          axis.title.y =element_text(size=35, colour = "grey35", face = "plain", 
+          axis.text.x = element_text(lineheight = 1.1, margin = margin(t = 20)),
+          axis.title.y = element_text(size=35, colour = "grey35", face = "plain", 
                                      lineheight = 1.1, margin = margin(r = 10)))
 
 options(repr.plot.width = 12, repr.plot.height = 8)
 
+repro.fig = 
 # FUNCTION CALL
 ggplot(dat.calc2, aes(x = incline,y = C_meas, group = speed, label = speed)) + 
 
@@ -192,9 +194,15 @@ stat_summary(geom = "text", fun.y = mean, position = position_dodge(0.82, preser
              vjust = -1.25, size = 10) +
 
 # AXIS LIMITS
-coord_cartesian(ylim = c(0.307,6.75)) + 
+coord_cartesian(ylim = c(0.31,6.75)) + 
 
 # LABELS
 scale_x_discrete(labels = c("Downhill", "Level", "Uphill")) +  # capitalize label initials :/
 labs(title = "Pulmonary Gas Exchange", x = "", y = "Measured Metabolic\nCost [J/kg/m]") + 
 theme_classic() + thm
+
+repro.fig
+
+
+# saving your figures as image files
+ggsave(file='reproduced_figure.svg', plot=repro.fig, width=12, height=8)
