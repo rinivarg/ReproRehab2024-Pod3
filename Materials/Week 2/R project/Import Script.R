@@ -1,11 +1,10 @@
+# Clear workspace
 rm(list=ls())
 
-library(here)
-library(purrr)
-library(readxl)
-library(Hmisc)
-library(chron)
-library(ggplot2)
+# Load required libraries
+ReqdLibs = c("here","purrr","readxl","Hmisc","chron","ggplot2")
+
+lapply(ReqdLibs, library, character.only = TRUE)
 
 #Check to see how many directories are in the Raw Data folder
 #Should populate 13 sub folders.
@@ -13,7 +12,7 @@ dir(here("Raw Data"))
 
 #Let's read in one file to see how ugly the data are
 files.test=list.files(here("Raw Data","Sub1"))
-temp=read_excel(here("Raw Data","Sub1",files.test[1]))
+temp0=read_excel(here("Raw Data","Sub1",files.test[1]))
 #very ugly need to modify so we only import a certain range
 #Let's just do the first 5 rows where the data is in long format
 temp=read_excel(here("Raw Data","Sub1",files.test[1]),range = cell_cols("J:O"))
@@ -48,6 +47,7 @@ for(i in 1:length(dir.list)){
     }else{
       temp$trial=paste("trial",as.numeric(substr(files.import[j],nchar(files.import[j])-5,nchar(files.import[j])-5)))
     }
+    # this final step is where the 'stacking' happens
     data.all=rbind(data.all,temp)
     
   }
