@@ -1,6 +1,6 @@
 rm(list = ls())
 
-ReqdLibs = c("readxl","ggplot2","ggthemes","dplyr","tidyr","forcats","janitor","IRdisplay")
+ReqdLibs = c("readxl","ggplot2","ggthemes","dplyr","tidyr","forcats","janitor","IRdisplay","patchwork","png")
 
 invisible(lapply(ReqdLibs, library, character.only = TRUE))
 
