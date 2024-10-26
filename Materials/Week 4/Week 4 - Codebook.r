@@ -2,9 +2,10 @@ rm(list = ls())
 
 ReqdLibs = c("readxl","ggplot2","ggthemes","dplyr","tidyr","forcats","janitor","IRdisplay","patchwork","png")
 
+# note if you have not installed any of the packages above, 
+# in the line below change 'library' to 'install.packages' then switch it back to 'library'
 invisible(lapply(ReqdLibs, library, character.only = TRUE))
 
-options(repr.plot.width = 7, repr.plot.height = 7)
 ggplot(data = mpg)
 
 ggplot(mpg, mapping = aes(x = cty, y = hwy))
@@ -19,7 +20,6 @@ ggplot(mpg, aes(cty, hwy, colour = class)) +
   geom_point() +
   scale_colour_viridis_d()
 
-options(repr.plot.width = 10, repr.plot.height = 8)
 ggplot(mpg, aes(cty, hwy)) +
   geom_point() +
   facet_grid(year ~ drv)
@@ -40,7 +40,6 @@ ggplot(mpg, aes(cty, hwy, colour = class)) +
   )
 
 
-options(repr.plot.width = 10, repr.plot.height = 10)
 ggplot(mpg, aes(cty, hwy)) +
   geom_point(mapping = aes(colour = displ)) +
   geom_smooth(formula = y ~ x, method = "lm") +
@@ -86,10 +85,11 @@ dat.raw %>%
 # let's separate these characters into workable parts
 separate(trial,into=c("prefix","num"), sep = " ",fill="right",remove = FALSE) %>%  
 
-# rest is coded differently from them, so we fill out the new variable type with "rest"
+# "rest" level is different from other trials (format: prefix + num), 
+# so we fill out the new variable num with "rest"
 mutate(num = if_else(prefix == "rest", prefix, num)) %>% 
 
-# now we are ready to define some new informative variables from our non-informative variable "type"
+# now we are ready to define some new informative variables from our non-informative variable "num"
 mutate(cond = if_else(num == "rest", num, "walk"),
        
        incline = case_when(num %in% lev ~ "level",
@@ -165,28 +165,21 @@ mutate(C_meas = W_adj/speed) %>%
 head(dat.calc2)
 
 thm = theme(
-          legend.text=element_text(size=16,face="bold"),
-          legend.position = "top",
-          legend.title=element_text(size=16,face="bold"),
-          title =element_text(size=14, face='bold'),
-          text = element_text(colour = "black",size=18), 
           plot.title = element_text(colour = "black",size = 35, face = "bold", hjust = 0.5),
           axis.ticks.length = unit(-0.3,"cm"),
-          axis.line = element_line(colour = "black",size=1),
-          axis.ticks = element_line(colour = "black",size=1),
-          axis.text = element_text(colour = "black",size=35),
+          axis.line = element_line(colour = "black",size = 1),
+          axis.ticks = element_line(colour = "black",size = 1),
+          axis.text = element_text(colour = "black",size = 35),
           axis.text.x = element_text(lineheight = 1.1, margin = margin(t = 20)),
           axis.title.y = element_text(size=35, colour = "grey35", face = "plain", 
                                      lineheight = 1.1, margin = margin(r = 10)))
-
-options(repr.plot.width = 12, repr.plot.height = 8)
 
 repro.fig = 
 # FUNCTION CALL
 ggplot(dat.calc2, aes(x = incline,y = C_meas, group = speed, label = speed)) + 
 
 # LAYERS THAT SUMMARIZE WHILE PLOTTING! - this is one of the most powerful features of ggplot
-stat_summary(geom = "bar", fun.y = mean, col = NA, fill = "black", width = 0.7, na.rm = TRUE,
+stat_summary(geom = "bar", fun = mean, col = NA, fill = "black", width = 0.7, na.rm = TRUE,
              position=position_dodge(width = 0.82, preserve = 'single')) + 
 stat_summary(geom = "errorbar",fun.data = mean_se, width = 0.15, lwd=2.5, col="darkgray", na.rm = TRUE,
             position=position_dodge(0.82, preserve = 'single')) + 
