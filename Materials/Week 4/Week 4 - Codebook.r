@@ -143,7 +143,7 @@ dat.summdemo = merge(dat.summ,demo.clean,by.x = 'Sub', by.y = 'subject_no')
 head(demo.clean)
 
 dat.summdemo %>% 
-mutate(adjVO2 = VO2/weight_from_force_plates_kg) %>% 
+mutate(adjVO2 = VO2/reported_weight_kg) %>% 
 mutate(W = 4.184/60 * (3.972 + 1.078 * R) * adjVO2) %>% 
 {.->>dat.calc1}
 
