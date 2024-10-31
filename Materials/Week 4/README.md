@@ -11,3 +11,7 @@
 3) R Graphics Cookbook: https://r-graphics.org
 4) Link to the [paper](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0222037#pone-0222037-g005)
 5) Link to the [data](https://zenodo.org/records/1973799)
+6) Not sure what kind of graph you want? 
+    * Try https://www.data-to-viz.com/ to help you make the decision!
+7) Not sure how to choose colors?
+    * Colors make your plot beautiful, but if you want to use colors effectively to convey information and inclusively so you are sensitive to the needs of our color-sensitive friends, you should familiarize yourself with color theory. Here's a website that helps you do that: https://colorbrewer2.org/#
