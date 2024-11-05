@@ -1,0 +1,215 @@
+---
+title: "Week 5 Statistics"
+output: pdf_document
+date: "2024-11-04"
+---
+
+## 1.1 Read in Data 
+
+# Perform demographics table and perform group comparisons
+
+https://www.danieldsjoberg.com/gtsummary/articles/tbl_summary.html
+
+```{r demographics}
+rm(list = ls())
+
+library(ggplot2)
+library(readxl)
+library(nlme)
+library(gtsummary)
+library(huxtable)
+library(officer)
+library(dplyr)
+
+demo=read_excel("SubjectInfo.xlsx")
+
+str(demo)
+demo.clean=demo[,c(-1)]
+demo.clean$Age=as.numeric(demo.clean$Age)
+
+tb=tbl_summary(demo.clean,
+            statistic = list( 
+                 all_continuous() ~ "{mean} ({sd})", 
+                 all_categorical() ~ "{n} ({p}%)" 
+               ),
+            type = list(Age ~ "continuous",`Reported Length (cm)`~"continuous"),
+               digits = all_continuous() ~ 2, #I want two points of precision (two decimal points) for continuous
+               missing = "ifany") %>%
+  bold_labels()
+
+tb
+
+tb.group=tbl_summary(demo.clean,
+               by = Gender,
+            statistic = list( 
+                 all_continuous() ~ "{mean} ({sd})", 
+                 all_categorical() ~ "{n} ({p}%)" 
+               ),
+            type = list(Age ~ "continuous",`Reported Length (cm)`~"continuous"),
+               digits = all_continuous() ~ 2, #I want two points of precision (two decimal points) for continuous
+               missing = "ifany") %>%
+  add_p(
+    #test = list("Age" = "t.test")
+    ) %>%
+  bold_labels() 
+
+tb.group
+
+table1=as_hux_table(tb.group)
+#Convert to word doc which will be saved in your current path
+quick_docx(table1,file="Gender Demo table.docx")
+
+```
+
+## 1.2 Linear Models
+
+```{r stats.one}
+
+data.task=read.csv("raw.data.all.csv")
+data.all=merge(data.task,demo,by.x = "Sub",by.y = "Subject No")
+
+#Aggregate all data by subject age and gender
+data.agg=aggregate(VO2~Age+Gender+Sub,data.all,mean)
+
+aggregate(VO2~Gender,data.all,mean)
+
+ggplot(data.agg,aes(x=Gender,y=VO2))+
+  geom_boxplot()+
+  geom_jitter()
+
+library(car)
+data.agg$Gender=factor(data.agg$Gender,levels = c("F","M"))
+#Run first linear model with lm()
+fit=lm(VO2~Age+Gender,data.agg)
+#check assumptions
+plot(fit)
+vif(fit) #Check for collinearity
+cooks.distance(fit) #Check for outliers
+summary(fit)
+confint(fit)
+
+tbl_regression(fit,
+               show_single_row = "Gender",
+               label = list(Gender = "Gender(Male)"),
+               intercept = T)
+
+```
+## 1.3 Mixed Models
+
+```{r mixed models}
+
+data.all=data.all[data.all$t<440,]
+
+ggplot(data.all,aes(x=t,y=VO2,color=trial,group=trial))+
+  geom_line(alpha=.5)+
+  geom_smooth(method = 'lm',color="black",se=F,size=2.5)+
+  geom_smooth(method = 'lm')
+
+data.all$Level="Level"
+data.all$Level[data.all$trial=="trial 3" | data.all$trial=="trial 4"]="Uphill"
+data.all$Level[data.all$trial=="trial 5" | data.all$trial=="trial 6"]="Downhill"
+
+data.all$Speed="Fast"
+data.all$Speed[data.all$trial=="trial 2" | data.all$trial=="trial 4" | data.all$trial=="trial 6"]="Slow"
+
+ggplot(data.all,aes(x=t,y=VO2))+
+  geom_line(alpha=.5)+
+  geom_smooth(method = 'lm',color="black",se=F,size=2.5)+
+  geom_smooth(method = 'lm')+
+  facet_grid(Level~Speed)
+
+ggplot(data.all,aes(x=t,y=VO2,color=Speed))+
+  geom_line(alpha=.5)+
+  geom_smooth(method = 'lm')+
+  facet_wrap(~Level)
+
+
+
+fit.lme=lme(VO2~t*Speed+t*Level+Age+Gender,
+            random = ~1|Sub,
+            method = "ML",
+            data.all)
+
+Anova(fit.lme)
+vif(fit.lme)
+summary(fit.lme)
+library(emmeans)
+
+#Calculate marginal (adjusted) means for level and speed
+#This gives us the average adjusted VO2 by speed and level
+emmeans(fit.lme,pairwise ~ Speed)
+ggplot(data.all,aes(x=Speed,y=VO2))+
+  geom_boxplot()
+emmeans(fit.lme,pairwise ~ Level)
+ggplot(data.all,aes(x=Level,y=VO2))+
+  geom_boxplot()
+
+#emtrends will return the pairwise comparisons between the slopes of each 
+#condition across time (t)
+emtrends(fit.lme,pairwise ~ Level,var = "t")
+ggplot(data.all,aes(x=t,y=VO2,color=Level))+
+  geom_line(alpha=.5)+
+  geom_smooth(method = 'lm')
+
+emtrends(fit.lme,pairwise ~ Speed,var = "t")
+ggplot(data.all,aes(x=t,y=VO2,color=Speed))+
+  geom_line(alpha=.5)+
+  geom_smooth(method = 'lm')
+
+```
+## 1.4 Model Comparison
+
+Our mixed effects model had the relationship between t and VO2 as linear.
+
+However, that may not be the model of best fit. A non-linear model may fit better.
+
+#But how would we determine this to be the case?
+```{r model.comparison}
+
+#We can either compare model metrics or run ANOVA between nested models
+AIC(fit.lme)
+fit.lme.log=lme(VO2~log(t)*Speed+
+                  log(t)*Level+Age+Gender,
+            random = ~1|Sub,
+            method = "ML",
+            data.all)
+
+Anova(fit.lme.log)
+vif(fit.lme.log)
+summary(fit.lme.log)
+AIC(fit.lme.log)
+
+anova(fit.lme,fit.lme.log)
+
+ggplot(data.all,aes(x=t,y=VO2))+
+  geom_line(alpha=.5)+
+  geom_smooth(method = 'lm',formula = "y~log(x)",color="black",se=F,size=2.5)+
+  geom_smooth(method = 'lm',formula = "y~log(x)")+
+  facet_grid(Level~Speed)
+
+#What if instead of a log we model it as a 2nd degree polynomial
+fit.lme.poly2=lme(VO2~poly(t,2,raw=TRUE)*Speed+
+                  poly(t,2,raw=TRUE)*Level+Age+Gender,
+            random = ~1|Sub,
+            method = "ML",
+            data.all)
+
+Anova(fit.lme.poly2)
+vif(fit.lme.poly2)
+summary(fit.lme.poly2)
+AIC(fit.lme.poly2)
+emtrends(fit.lme.poly2,pairwise ~ Level,var="t")
+
+#In this case a log model is just as good as a poly model and a little simpler
+anova(fit.lme,fit.lme.poly2,fit.lme.log)
+
+#However, there may exist a model that is more complex and a better fit.
+ggplot(data.all,aes(x=t,y=VO2))+
+  geom_line(alpha=.5)+
+  geom_smooth(method = 'lm',formula = "y~poly(x,3)",color="black",se=F,size=2.5)+
+  geom_smooth(method = 'lm',formula = "y~poly(x,3)")+
+  facet_grid(Level~Speed)
+
+#At this point we would move to a non-linear mixed effects model.
+
+```
