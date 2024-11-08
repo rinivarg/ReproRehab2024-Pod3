@@ -34,7 +34,7 @@ A good sanity check before plugging in your now clean and formatted data into a 
 ## [Week 5](https://github.com/rinivarg/ReproRehab2024-Pod3/tree/main/Materials/Week%205): Statistical Analysis
 Now that you have imported, cleaned, manipulated, and visually checked your data you are ready to confidentally analyze it. In this lesson we will present how to use base functions in R to run general and generalize linear models for statistical analysis. Additionally, we will go over how to use a library specific for mixed effects models for repeated measures designs and the incorporation of random effects.
 
-## [Week 6](https://github.com/rinivarg/ReproRehab2024-Pod3/tree/main/Materials/Week%206): R Markdown and Jupyter Notebooks
+## [Week 6](https://github.com/rinivarg/ReproRehab2024-Pod3/tree/main/Materials/Week%206): Codebooks and Cloud Computing
 You now have the makings of a working analytical pipeline that fits your data and your research question. One day you will want to share it with the world! In this lesson we will present different methods for sharing your code either a vignette or notebook that makes your work accessible to a variety of audiences.
 
 ## [Week 7 & 8](https://github.com/rinivarg/ReproRehab2024-Pod3/tree/main/Materials/Week%207%20%26%208): Personalized Lessons!!
