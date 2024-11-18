@@ -1,1 +1,10 @@
-let's take a look at your data
+Chris' description of data below:
+
+To assess quality assurance of lab staff marker placement when performing a clinical gait analysis, we had a single patient with gait abnormalities perform barefoot walking trials 3 different times. The researcher would apply markers per our typical marker set, the patient would perform 4-5 walking trials, and then the markers would be removed. This process was repeated 2 more times in the same lab visit. So ideally, there should be minimal differences between the signals produced…but if there are large differences, this could point to marker placement inconsistencies that may need to be addressed.
+So now, when you see the file names, hopefully it should make more sense. As far as the signals in the .txt files, it’s pretty messy the way that Visual 3D exports it with the file names and such at the top. But essentially, the following signals were exported in all 3 planes (X, Y, Z) and normalized to %Gait Cycle of the corresponding limb (hence the 101 “items”):
+
+Left Ankle Angular Position + Left Foot Progression + Left Hip Angular Position + Left Knee Angular Position + LeftGRF + Norm Left Ankle Joint Power + Norm Left Ankle Joint Torque + Norm Left Hip Joint Power + Norm Left Hip Joint Torque + Norm Left Knee Joint Power + Norm Left Knee Joint Torque + Norm Right Ankle Joint Power + Norm Right Ankle Joint Torque + Norm Right Hip Joint Power + Norm Right Hip Joint Torque + Norm Right Knee Joint Power + Norm Right Knee Joint Torque + Pelvis Left Angular Position + Pelvis Right Angular Position + Right Ankle Angular Position + Right Foot Progression + Right Hip Angular Position + Right Knee Angular Position + RightGRF + Trunk Left Position + Trunk Right Position
+
+The signals were exported in alphabetical order unfortunately, so the organization is a bit all over the place. I could also export actual marker trajectory position data, but I just began with these signals that are calculated in Visual 3D using model-based computation.
+
+An immediate need I have is to assess statistical differences between the 3 marker placement trials.
