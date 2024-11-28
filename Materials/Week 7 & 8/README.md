@@ -8,7 +8,7 @@ So now, when you see the file names, hopefully it should make more sense. As far
 The signals were exported in alphabetical order unfortunately, so the organization is a bit all over the place. I could also export actual marker trajectory position data, but I just began with these signals that are calculated in Visual 3D using model-based computation.
 
 ![#f03c15](https://placehold.co/15x15/f03c15/f03c15.png) 
-${\color{red} Below\space\ is \space\ our \space\ RESEARCH \space QUESTION.}$ <br>
+${\color{red} Below\space\ is \space\ our \space\ research \space QUESTION:}$ <br>
 An immediate need I have is to **assess statistical differences between the 3 marker placement trials** (T1, T2, T3). <br>
 
 
@@ -29,4 +29,6 @@ The following files are codebooks with <ins>the complete solutions and detailed 
 3) [Week_7&8_Codebook.R format](https://github.com/rinivarg/ReproRehab2024-Pod3/blob/main/Materials/Week%207%20%26%208/Week%207%20%26%208%20-%20Codebook.r)
 <br>
 
-PS: The [figures folder](https://github.com/rinivarg/ReproRehab2024-Pod3/tree/main/Materials/Week%207%20%26%208/figures) contains our the fruit of our labors -- the plots to visually compare across the 3 sessions.
+![#006400](https://placehold.co/15x15/006400/006400.png)
+${\color{green} Below \space\ is \space\ the \space\ ANSWER \space\ to \space\ our \space\ research \space\ question:}$ <br>
+The [figures folder](https://github.com/rinivarg/ReproRehab2024-Pod3/tree/main/Materials/Week%207%20%26%208/figures) contains the fruit of our labors -- the plots to visually compare across the 3 sessions.
