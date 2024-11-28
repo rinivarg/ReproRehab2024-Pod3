@@ -1,1 +1,2 @@
+According to [left](https://github.com/rinivarg/ReproRehab2024-Pod3/blob/main/Materials/Week%207%20%26%208/figures/left_allVars.svg) and [right](https://github.com/rinivarg/ReproRehab2024-Pod3/blob/main/Materials/Week%207%20%26%208/figures/right_allVars.svg) side segment figures as well as the associated statistical comparisons:<br><br>
 <img width="835" alt="image" src="https://github.com/user-attachments/assets/001a0d04-fc10-4f6d-b65b-5da7faae495c">
